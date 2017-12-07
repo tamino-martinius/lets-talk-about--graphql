@@ -68,11 +68,25 @@ article
       background-image radial-gradient(75vw, #66CC66 0%, #66CC66 50%, #765 100%)
     h1, h2, h3, h4, h5, h6
       color #fff
+  &.meme
+  &.image
+    background-size contain
+    background-repeat no-repeat
+    background-position center center
+    > *
+      position absolute
+      z-index 2
+      text-align center
+      width 100%
+      &:first-child
+        top 0
+      &:last-child
+        bottom 0
 
 $imageCount = 1
 for num in 1...$imageCount
   // path = "images/bg/"+ random(1,2)+".jpg"
-  path = "images/bg/" + num + ".jpg"
+  path = "assets/bg/" + num + ".jpg"
   .slides > article:nth-child({$imageCount}n+{num})
     &:before
       background-image url(path)

@@ -14,6 +14,11 @@ const callback = entries => {
 
 const observer = new IntersectionObserver(callback, options);
 
+const bgImages = document.querySelectorAll('article.meme,article.image');
+bgImages.forEach(bgImage =>
+  bgImage.style.backgroundImage = `url('${bgImage.dataset.src}')`
+);
+
 // get a list of all videos on the page
 const videos = document.querySelectorAll('video');
 // Observe each of those elements

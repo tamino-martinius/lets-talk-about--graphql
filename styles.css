@@ -84,8 +84,29 @@ article.section h5,
 article.section h6 {
   color: #fff;
 }
+article.meme,
+article.image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+article.meme > *,
+article.image > * {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+}
+article.meme > *:first-child,
+article.image > *:first-child {
+  top: 0;
+}
+article.meme > *:last-child,
+article.image > *:last-child {
+  bottom: 0;
+}
 .slides > article:nth-child(1n+1):before {
-  background-image: url("images/bg/1.jpg");
+  background-image: url("assets/bg/1.jpg");
 }
 .build > * {
   -webkit-transition: opacity 0.2s ease-in-out 0.2s;
