@@ -8,8 +8,6 @@ html
     body
       section.slides.layout-regular.template-default
         article
-          img(src="assets/memes/bean.jpg")
-        article
           h2 Lets Talk about...
           h1 &nbsp;
         article
@@ -26,22 +24,22 @@ html
             li Made for APIs
         article
           h1 API?
-        article.meme(data-src="assets/memes/why-u-no.jpg")
-          h2 Y U NO USE
-          h1 REST!
+        article.image(data-src="assets/memes/philosoraptor.jpg")
+          h2 Why don't use
+          h1 REST
         article
           h2 Whats wrong with REST?
           ul.build
             li Multiple calls
-            li Multiple endpoints
             li Define nesting
             li Define selected fields
+            li Multiple endpoints
             li GET requests with limited query size
         article
           h1 All in one Query?
-        article.meme(data-src="assets/memes/why-u-no.jpg")
-          h2 Y U NO USE
-          h1 SQL!
+        article.image(data-src="assets/memes/philosoraptor.jpg")
+          h2 Why don't use
+          h1 SQL
         article
           h2 Whats wrong with SQL?
           ul.build
@@ -49,7 +47,7 @@ html
             li Only subset of features
             li Confusing notation
             li Not made for API
-        article.meme(data-src="assets/memes/fry.jpg")
+        article.image(data-src="assets/memes/fry.jpg")
           h1 Why GraphQL?
         article
           h2 Why GraphQL?
@@ -59,8 +57,8 @@ html
             li POST to a single endpoint
             li Validated and Structured
             li Easy to optimize
-        article.section
-          h2 GraphQL
+        article.image.cover(data-src="assets/memes/crash.jpg")
+          h1 &nbsp;
           h1 Crash Course
         article
           h1 Server
@@ -193,7 +191,7 @@ html
           h2 Arguments
           ul.build
             li
-              pre
+              pre.linenums.h3
                 | type Employment {
                 |   firstName: String!
                 |   lastName: String!
@@ -203,7 +201,7 @@ html
           h2 Arguments
           ul.build
             li
-              pre
+              pre.linenums.h4.h5
                 | type Employment {
                 |   firstName: String!
                 |   lastName: String!
@@ -362,9 +360,13 @@ html
                 |   }
                 | }
         article
-          h1
-            a(href="https://launchpad.graphql.com/10vn1745k9")
-              | Demo
+          ul.horizontal.build
+            li
+              h1
+                a(href="https://launchpad.graphql.com/10vn1745k9")
+                  | Demo
+            li
+              img(src="assets/memes/like-a-boss.jpg")
         article
           h1
             a(href="http://graphql.org/code/")
@@ -412,10 +414,15 @@ html
         article.image(data-src="assets/images/apollo-schema.png")
         article.image(data-src="assets/images/apollo-trends.png")
         article
-          h1
-            a(href="https://engine.apollographql.com/service/launchpad-10vn1745k9")
-              | Demo
-        article
+          ul.horizontal.build
+            li
+              h1
+                a(href="https://engine.apollographql.com/service/launchpad-10vn1745k9")
+                  | Demo
+            li
+              img(src="assets/memes/like-a-boss.jpg")
+        article.image(data-src="assets/memes/all-the-things.jpg")
+          h1 &nbsp;
           h1 Thats it
         article
           h2 Whats next?

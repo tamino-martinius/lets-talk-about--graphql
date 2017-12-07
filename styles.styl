@@ -68,12 +68,13 @@ article
       background-image radial-gradient(75vw, #66CC66 0%, #66CC66 50%, #765 100%)
     h1, h2, h3, h4, h5, h6
       color #fff
-  &.meme
   &.image
     background-size contain
     background-repeat no-repeat
     background-position center center
-    > *
+    &.cover
+      background-size cover
+    > *:not(:only-child)
       position absolute
       z-index 2
       text-align center

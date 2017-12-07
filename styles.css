@@ -84,25 +84,24 @@ article.section h5,
 article.section h6 {
   color: #fff;
 }
-article.meme,
 article.image {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
-article.meme > *,
-article.image > * {
+article.image.cover {
+  background-size: cover;
+}
+article.image > *:not(:only-child) {
   position: absolute;
   z-index: 2;
   text-align: center;
   width: 100%;
 }
-article.meme > *:first-child,
-article.image > *:first-child {
+article.image > *:not(:only-child):first-child {
   top: 0;
 }
-article.meme > *:last-child,
-article.image > *:last-child {
+article.image > *:not(:only-child):last-child {
   bottom: 0;
 }
 .slides > article:nth-child(1n+1):before {
