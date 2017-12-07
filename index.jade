@@ -3,7 +3,7 @@ html
   head
       title Lets talk about ... GraphQL by Tamino
       meta(charset='utf-8')
-      script(src='slides.js')
+      script(src='assets/vendor/slides.js')
       link(href='styles.css'  rel='stylesheet' type='text/css')
     body
       section.slides.layout-regular.template-default
@@ -24,7 +24,8 @@ html
             li Made for APIs
         article
           h1 API?
-        article
+        article.meme(data-src="assets/memes/bean.jpg")
+          h2 Y U NOT USE
           h1 REST!
         article
           h2 Whats wrong with REST?
@@ -36,7 +37,8 @@ html
             li GET requests with limited query size
         article
           h1 All in one Query?
-        article
+        article.meme(data-src="assets/memes/bean.jpg")
+          h2 Y U NOT USE
           h1 SQL!
         article
           h2 Whats wrong with SQL?
@@ -45,6 +47,8 @@ html
             li Only subset of features
             li Confusing notation
             li Not made for API
+        article.meme(data-src="assets/memes/like-a-boss.jpg")
+          h1 Why GraphQL?
         article
           h2 Why GraphQL?
           ul.build
@@ -208,8 +212,7 @@ html
                 | }
         article
           h1 Schema
-        article
-          img(src="images/gql-model.svg")
+        article.image(data-src="assets/images/gql-model.svg")
         article
           pre
             | schema {
@@ -358,10 +361,12 @@ html
                 | }
         article
           h1
-            a(href="https://launchpad.graphql.com/10vn1745k9") Demo
+            a(href="https://launchpad.graphql.com/10vn1745k9")
+              | Demo
         article
           h1
-            a(href="http://graphql.org/code/") Libraries
+            a(href="http://graphql.org/code/")
+              | Libraries
         article.section
           h1 Apollo
         article
@@ -373,48 +378,41 @@ html
           ul.build.horizontal
             li
               b Server
-              img(src="images/apollo-server.svg", style="height: 30vh")
+              img(src="assets/images/apollo-server.svg", style="height: 30vh")
               ul.build
                 li Lambda
                 li EC2
                 li Express
             li
               b Engine
-              img(src="images/apollo-engine.svg", style="height: 30vh")
+              img(src="assets/images/apollo-engine.svg", style="height: 30vh")
               ul.build
                 li Tracking
                 li Monitoring
                 li Caching
             li
               b Client
-              img(src="images/apollo-client.svg", style="height: 30vh")
+              img(src="assets/images/apollo-client.svg", style="height: 30vh")
               ul.build
                 li Transfer
                 li Binding
                 li Reactivity
         article
           h1 Reactivity?
+        article.image(data-src="assets/images/gql-model.svg")
+        article.image(data-src="assets/images/gql-events.svg")
+        article.image(data-src="assets/images/gql-subscriptions.svg")
         article
-          img(src="images/gql-model.svg")
-        article
-          img(src="images/gql-events.svg")
-        article
-          img(src="images/gql-subscriptions.svg")
-        article
-          video(src="images/communication.mov" loop controls)
-        article
-          img(src="images/apollo-trace.png")
-        article
-          img(src="images/apollo-caching-trace.png")
-        article
-          img(src="images/apollo-errors.png")
-        article
-          img(src="images/apollo-schema.png")
-        article
-          img(src="images/apollo-trends.png")
+          video(src="assets/videos/communication.mov" loop controls)
+        article.image(data-src="assets/images/apollo-trace.png")
+        article.image(data-src="assets/images/apollo-caching-trace.png")
+        article.image(data-src="assets/images/apollo-errors.png")
+        article.image(data-src="assets/images/apollo-schema.png")
+        article.image(data-src="assets/images/apollo-trends.png")
         article
           h1
-            a(href="https://engine.apollographql.com/service/launchpad-10vn1745k9") Demo
+            a(href="https://engine.apollographql.com/service/launchpad-10vn1745k9")
+              | Demo
         article
           h1 Thats it
         article
@@ -435,4 +433,4 @@ html
         article.section
           h1 Questions?
 
-      script(src='scripts.js')
+      script(src='assets/scripts/main.js')
