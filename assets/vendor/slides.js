@@ -10,11 +10,7 @@
   URL: http://code.google.com/p/html5slides/
 */
 
-// var PERMANENT_URL_PREFIX = 'http://localhost/demos/talks/snow/';
-
-let PERMANENT_URL_PREFIX = window.location.origin + window.location.pathname;
-
-// var PERMANENT_URL_PREFIX = window.location.href.split('/index.html')[0] + '/'
+var PERMANENT_URL_PREFIX = 'assets/vendor/';
 
 let SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
