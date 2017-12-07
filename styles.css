@@ -149,7 +149,8 @@ ul {
 }
 video,
 img {
-  width: 80%;
+  width: auto;
+  height: auto;
   max-width: 80vw;
   max-height: 80vh;
   display: block;
@@ -233,11 +234,16 @@ img {
   background: rgba(102,204,102,0.4);
 }
 ul.horizontal {
+  margin: 0;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+}
+ul.horizontal h1,
+ul.horizontal h2 {
+  line-height: 2em;
 }
 ul.horizontal ul {
   padding: 0;
@@ -246,4 +252,6 @@ ul.horizontal li {
   padding: 1vw;
   width: 100%;
   text-align: center;
+  font-size: 7.5vh;
+  line-height: 1.5em;
 }
