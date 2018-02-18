@@ -1,3 +1,10 @@
+:root {
+  --color-theme: #6c6;
+  --color-foreground: #000;
+  --color-background: #fff;
+  --color-vignette: #765;
+  --color-section-foreground: #fff;
+}
 html,
 body,
 .slides,
@@ -19,6 +26,9 @@ body {
       -ms-user-select: none;
           user-select: none;
 }
+.slides > article:nth-child(1n+1):before {
+  background-image: url("assets/bg/1.jpg");
+}
 .slides {
   display: table;
 }
@@ -31,15 +41,15 @@ body {
   left: 0;
 }
 #prev-slide-area:hover {
-  background: -webkit-gradient(linear, left top, right top, color-stop(0, #6c6), color-stop(10%, rgba(255,255,255,0)));
-  background: linear-gradient(90deg, #6c6 0, rgba(255,255,255,0) 10%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--color-theme)), color-stop(10%, rgba(255,255,255,0)));
+  background: linear-gradient(90deg, var(--color-theme) 0, rgba(255,255,255,0) 10%);
 }
 #next-slide-area {
   right: 0;
 }
 #next-slide-area:hover {
-  background: -webkit-gradient(linear, right top, left top, color-stop(0, #6c6), color-stop(10%, rgba(255,255,255,0)));
-  background: linear-gradient(270deg, #6c6 0, rgba(255,255,255,0) 10%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(0, var(--color-theme)), color-stop(10%, rgba(255,255,255,0)));
+  background: linear-gradient(270deg, var(--color-theme) 0, rgba(255,255,255,0) 10%);
 }
 article {
   vertical-align: middle;
@@ -67,14 +77,14 @@ article:before {
 article:after {
   z-index: -1;
   opacity: 0.95;
-  background-image: radial-gradient(75vw, #fff 0%, #eee 75%, #765 100%);
+  background-image: radial-gradient(75vw, var(--color-background) 0%, var(--color-background) 75%, var(--color-vignette) 100%);
 }
 article.plain:before,
 article.plain:after {
   display: none;
 }
 article.section:after {
-  background-image: radial-gradient(75vw, #6c6 0%, #6c6 50%, #765 100%);
+  background-image: radial-gradient(75vw, var(--color-theme) 0%, var(--color-theme) 50%, var(--color-vignette) 100%);
 }
 article.section h1,
 article.section h2,
@@ -82,7 +92,7 @@ article.section h3,
 article.section h4,
 article.section h5,
 article.section h6 {
-  color: #fff;
+  color: var(--color-section-foreground);
 }
 article.image {
   background-size: contain;
@@ -104,9 +114,6 @@ article.image > *:not(:only-child):first-child {
 article.image > *:not(:only-child):last-child {
   bottom: 0;
 }
-.slides > article:nth-child(1n+1):before {
-  background-image: url("assets/bg/1.jpg");
-}
 .build > * {
   -webkit-transition: opacity 0.2s ease-in-out 0.2s;
   transition: opacity 0.2s ease-in-out 0.2s;
@@ -121,7 +128,7 @@ h4,
 h5,
 h6 {
   text-align: center;
-  color: #6c6;
+  color: var(--color-theme);
   text-shadow: 0 0 1px #000;
   margin: 1vh;
 }
@@ -129,7 +136,7 @@ em,
 a,
 a:visited,
 a:hover {
-  color: #6c6;
+  color: var(--color-theme);
 }
 h1 {
   font-size: 10vw;
@@ -155,8 +162,6 @@ img {
   display: block;
   margin: 0 auto;
 }
-/* Pretty printing styles. Used with prettify.js. */
-/* Vim sunburst theme by David Leibovic */
 .slides pre.prettyprint {
   background-color: #000;
   border-radius: 8px;
@@ -253,4 +258,11 @@ ul.horizontal li {
   text-align: center;
   font-size: 7.5vh;
   line-height: 1.5em;
+}
+:root {
+  --color-theme: #6c6;
+  --color-foreground: #000;
+  --color-background: #fff;
+  --color-vignette: #765;
+  --color-section-foreground: #fff;
 }

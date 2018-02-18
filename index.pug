@@ -1,0 +1,447 @@
+doctype html
+html
+  head
+      title Lets talk about ... Example
+      meta(charset='utf-8')
+      script
+        | window.PERMANENT_URL_PREFIX = window.PERMANENT_URL_PREFIX || 'node_modules/lets-talk-about--template/assets/vendor/';
+      script(src='node_modules/lets-talk-about--template/assets/vendor/slides.js')
+      link(href='styles.css'  rel='stylesheet' type='text/css')
+  body
+    section.slides.layout-regular.template-default
+      article
+        h2 Lets Talk about...
+        h1 &nbsp;
+      article
+        h2 Lets Talk about...
+        h1 GraphQL
+      article
+        h1 What is GraphQL?
+      article
+        h2 What is GraphQL?
+        ul.build
+          li Invented by Facebook Mobile Department (2012)
+          li Open Sourced 2015
+          li Query Language
+          li Made for APIs
+      article
+        h1 API?
+      article.image(data-src="node_modules/lets-talk-about--template/assets/memes/philosoraptor.jpg")
+        h2 Why don't use
+        h1 REST
+      article
+        h2 Whats wrong with REST?
+        ul.build
+          li Multiple calls
+          li Define nesting
+          li Define selected fields
+          li Multiple endpoints
+          li GET requests with limited query size
+      article
+        h1 All in one Query?
+      article.image(data-src="node_modules/lets-talk-about--template/assets/memes/philosoraptor.jpg")
+        h2 Why don't use
+        h1 SQL
+      article
+        h2 Whats wrong with SQL?
+        ul.build
+          li Database dependent
+          li Only subset of features
+          li Confusing notation
+          li Not made for API
+      article.image(data-src="node_modules/lets-talk-about--template/assets/memes/fry.jpg")
+        h1 Why GraphQL?
+      article
+        h2 Why GraphQL?
+        ul.build
+          li De-Coupled from storage
+          li Whole request in one query
+          li POST to a single endpoint
+          li Validated and Structured
+          li Easy to optimize
+      article.image.cover(data-src="node_modules/lets-talk-about--template/assets/memes/crash.jpg")
+        h1 &nbsp;
+        h1 Crash Course
+      article
+        h1 Server
+      article
+        h1 Types
+      article
+        pre.linenums
+          | type Employment {
+          |   firstName: String!
+          |   lastName: String!
+          |   worksAt: [Shift]!
+          | }
+        ul
+          li &nbsp;
+          li &nbsp;
+          li &nbsp;
+      article
+        pre.linenums.h0
+          | type Employment {
+          |   firstName: String!
+          |   lastName: String!
+          |   worksAt: [Shift]!
+          | }
+        ul
+          li
+            b Employment
+          li <em>GraphQL Object Type</em>, meaning it's a type with some fields.
+          li Most of the types in your schema will be object types.
+      article
+        pre.linenums.h1.h2.h3
+          | type Employment {
+          |   firstName: String!
+          |   lastName: String!
+          |   worksAt: [Shift]!
+          | }
+        ul
+          li
+            b firstName, lastName, worksAt
+          li <em>Fields</em> on <i>Employment</i> Type. That are the only
+          li fields which can appear on a Employment type.
+      article
+        pre.linenums.h1
+          | type Employment {
+          |   firstName: String!
+          |   lastName: String!
+          |   worksAt: [Shift]!
+          | }
+        ul
+          li
+            b String
+          li Build in <em>Scalar Type</em> - resolve to a single scalar
+          li without any sub selections.
+      article
+        pre.linenums.h1
+          | type Employment {
+          |   firstName: String!
+          |   lastName: String!
+          |   worksAt: [Shift]!
+          | }
+        ul
+          li
+            b String!
+          li <em>Non-nullable</em> field.
+          li &nbsp;
+      article
+        pre.linenums.h3
+          | type Employment {
+          |   firstName: String!
+          |   lastName: String!
+          |   worksAt: [Shift]!
+          | }
+        ul
+          li
+            b [Shift]!
+          li <em>Array</em> of shifts. Since its also <i>non-nullable</i>, you
+          li can always expect an array (with zero or more Shifts).
+      article
+        h1 Scalars
+      article
+        h2 Build in Scalars
+        ul.build
+          li <em>Int</em>: Signed 32-bit Integer.
+          li <em>Float</em>: Signed double-precision floating-point value.
+          li <em>String</em>: A UTF-8 character sequence.
+          li <em>Boolean</em>: <i>true</i> or <i>false</i>
+          li <em>ID</em>: Unique Identifier serialized same way as String
+      article
+        h2 Custom Scalars
+        ul.build
+          li
+            pre scalar Date
+      article
+        h2 Enums
+        ul.build
+          li
+            pre
+              | enum Style {
+              |   NONE
+              |   BOLD
+              |   ITALIC
+              |   UNDERLINE
+              | }
+      article
+        h2 Interface
+        ul.build
+          li
+            pre
+              | interface Person {
+              |   firstName: String!
+              |   lastName: String!
+              | }
+      article
+        h2 Using Interface
+        ul.build
+          li
+            pre
+              | type Employment implements Person {
+              |   firstName: String!
+              |   lastName: String!
+              |   worksAt: [Shift]!
+              | }
+      article
+        h2 Union
+        ul.build
+          li
+            pre
+              | union Conflict =
+              |   Shift | Absence | HourAccount
+      article
+        h2 Arguments
+        ul.build
+          li
+            pre.linenums.h3
+              | type Employment {
+              |   firstName: String!
+              |   lastName: String!
+              |   worksAt: [Shift]!
+              | }
+      article
+        h2 Arguments
+        ul.build
+          li
+            pre.linenums.h4.h5
+              | type Employment {
+              |   firstName: String!
+              |   lastName: String!
+              |   worksAt(
+              |     startsAt: Date,
+              |     endsAt: Date
+              |   ): [Shift]!
+              | }
+      article
+        h1 Schema
+      article.image(data-src="assets/images/gql-model.svg")
+      article
+        pre
+          | schema {
+          |   query: Query
+          |   mutation: Mutation
+          | }
+      article
+        pre
+          | ... scalars ...
+          | ... interfaces ...
+          | ... unions ...
+          | ... types ...
+          | &nbsp;
+          | schema {
+          |   query: Query
+          |   mutation: Mutation
+          | }
+      article
+        h2 Query
+        ul.build
+          li
+            pre
+              | type Query {
+              |   employment(id: ID): Employment
+              | }
+      article
+        h2 Query
+        ul
+          li
+            pre
+              | type Query {
+              |   employment(id: ID): Employment
+              |   employments(
+              |     id: ID,
+              |     firstName: string
+              |   ): [Employment]!
+              | }
+      article
+        h2 Query
+        ul
+          li
+            pre
+              | type Query {
+              |   employment(id: ID): Employment
+              |   employments(
+              |     ids: [ID],
+              |     firstName: string
+              |   ): [Employment]!
+              |   billingTypes: [BillingType]!
+              | }
+      article
+        h2 Mutation
+        ul.build
+          li
+            pre
+              | type Mutation {
+              |   createEmployment(
+              |     userId: ID!,
+              |     companyId: ID!,
+              |     firstName: String!,
+              |     lastName: String!
+              |   ): Employment!
+              | }
+      article
+        h2 Input Type
+        ul.build
+          li
+            pre
+              | input EmploymentInput {
+              |   firstName: String!
+              |   lastName: String!
+              | }
+      article
+        h2 Mutation
+        ul.build
+          li
+            pre
+              | type Mutation {
+              |   createEmployment(
+              |     userId: ID!,
+              |     companyId: ID!,
+              |     fields: EmploymentFields!,
+              |   ): Employment!
+              | }
+      article
+        h1 Client
+      article
+        h1 Call Queries
+      article
+        h2 Basic
+        pre
+          | {
+          |   employment(id: 1) {
+          |     firstName
+          |   }
+          | }
+      article
+        h2 Result
+        pre
+          | {
+          |   "employment": {
+          |     "firstName": "Tamino"
+          |   }
+          | }
+      article
+        h2 Named
+        pre
+          | query FetchEmployment {
+          |   employment(id: 1) {
+          |     firstName
+          |   }
+          | }
+      article
+        h2 With Parameters
+        pre
+          | query FetchEmployment($id: Int!) {
+          |   employment(id: $id) {
+          |     firstName
+          |   }
+          | }
+      article
+        h2 Query Call
+        pre
+          | gql`
+          |   query FetchEmployment($id: Int!) {
+          |     employment(id: $id) {
+          |       firstName
+          |     }
+          |   }
+          | `, {
+          |   id: 1,
+          | }
+      article
+        h2 Call Mutations
+        ul.build
+          li
+            pre
+              | mutation CreateEmployment(
+              |   $userId: Int!,
+              |   $companyId: Int!,
+              |   $firstName: String!,
+              | ) {
+              |   createEmployment(userId: $userId, ...) {
+              |     id
+              |   }
+              | }
+      article
+        ul.horizontal.build
+          li
+            h1
+              a(href="https://launchpad.graphql.com/10vn1745k9")
+                | Demo
+          li
+            img(src="node_modules/lets-talk-about--template/assets/memes/like-a-boss.jpg")
+      article
+        h1
+          a(href="http://graphql.org/code/")
+            | Libraries
+      article.section
+        h1 Apollo
+      article
+        h2 What is Apollo?
+        ul.build
+          li GraphQL with benefits
+          li A couple of packages
+      article
+        ul.build.horizontal
+          li
+            h2 Server
+            img(src="assets/images/apollo-server.svg", style="height: 30vh")
+            ul.build
+              li Lambda
+              li EC2
+              li Express
+          li
+            h2 Engine
+            img(src="assets/images/apollo-engine.svg", style="height: 30vh")
+            ul.build
+              li Tracking
+              li Monitoring
+              li Caching
+          li
+            h2 Client
+            img(src="assets/images/apollo-client.svg", style="height: 30vh")
+            ul.build
+              li Transfer
+              li Binding
+              li Reactivity
+      article
+        h1 Reactivity?
+      article.image(data-src="assets/images/gql-model.svg")
+      article.image(data-src="assets/images/gql-events.svg")
+      article.image(data-src="assets/images/gql-subscriptions.svg")
+      article
+        video(src="assets/videos/communication.mov" loop controls)
+      article.image(data-src="assets/images/apollo-trace.png")
+      article.image(data-src="assets/images/apollo-caching-trace.png")
+      article.image(data-src="assets/images/apollo-errors.png")
+      article.image(data-src="assets/images/apollo-schema.png")
+      article.image(data-src="assets/images/apollo-trends.png")
+      article
+        ul.horizontal.build
+          li
+            h1
+              a(href="https://engine.apollographql.com/service/launchpad-10vn1745k9")
+                | Demo
+          li
+            img(src="node_modules/lets-talk-about--template/assets/memes/like-a-boss.jpg")
+      article.image(data-src="node_modules/lets-talk-about--template/assets/memes/all-the-things.jpg")
+        h1 &nbsp;
+        h1 Thats it
+      article
+        h2 Whats next?
+        ul.build
+          li
+            a(href="https://www.apollographql.com/")
+              | Apollo
+          li
+            a(href="http://graphql.org/")
+              | GraphQL
+          li
+            a(href="http://launchpad.graphql.com")
+              | Playground
+          li
+            a(href="https://tamino-martinius.github.io/lets-talk-about--graphql")
+              | Slides
+      article.section
+        h1 Questions?
+
+    script(src='node_modules/lets-talk-about--template/assets/scripts/main.js')

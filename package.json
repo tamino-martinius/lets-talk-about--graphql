@@ -1,19 +1,14 @@
 {
   "name": "lets-talk-about---graphql",
+  "description": "Lets talk about ... GraphQL",
   "author": "Tamino Martinius",
+  "homepage": "https://github.com/tamino-martinius/lets-talk-about--graphql",
   "private": true,
   "scripts": {
-    "start": "gulp"
+    "start": "build-slides"
   },
   "license": "MIT",
-  "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-stylus": "^2.6.0",
-    "request": "^2.83.0"
+  "dependencies": {
+    "lets-talk-about--template": "^1.0.1"
   }
 }
