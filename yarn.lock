@@ -1937,9 +1937,10 @@ lead@^1.0.0:
   dependencies:
     flush-write-stream "^1.0.2"
 
-lets-talk-about--template@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/lets-talk-about--template/-/lets-talk-about--template-1.1.1.tgz#d56db5117b94384486eab922beb158dbe6674b5d"
+lets-talk-about--template@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/lets-talk-about--template/-/lets-talk-about--template-1.1.2.tgz#4d9f16ef5b2687d99613a87d757df7ddb13c6780"
+  integrity sha512-564AkVsvfyrZQs2nApTxXsDIqF9sjHIJv3MFZPcA0drQSKttfEoHmVoJVPXiMPHXy0DgPhf5v8nQaxjOTOgUbQ==
   dependencies:
     browser-sync "^2.24.5"
     gulp "^4.0.0"
