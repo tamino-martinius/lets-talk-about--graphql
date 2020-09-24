@@ -3,10 +3,8 @@ html
   head
       title Lets talk about ... GraphQL
       meta(charset='utf-8')
-      script
-        | window.PERMANENT_URL_PREFIX = window.PERMANENT_URL_PREFIX || 'node_modules/lets-talk-about--template/assets/vendor/';
-      script(src='node_modules/lets-talk-about--template/assets/vendor/slides.js')
-      link(href='styles.css'  rel='stylesheet' type='text/css')
+      link(href='styles.styl'  rel='stylesheet' type='text/css')
+      doctype html
   body
     section.slides.layout-regular.template-default
       article.build
@@ -441,4 +439,4 @@ html
       article.section
         h1 Questions?
 
-    script(src='node_modules/lets-talk-about--template/assets/scripts/main.js')
+    script(src='node_modules/lets-talk-about--template/main.js')
