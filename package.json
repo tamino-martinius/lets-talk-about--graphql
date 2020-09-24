@@ -5,10 +5,13 @@
   "homepage": "https://github.com/tamino-martinius/lets-talk-about--graphql",
   "private": true,
   "scripts": {
-    "start": "build-slides"
+    "start": "parcel index.pug",
+    "prebuild": "find dist ! -name 'CNAME' -type f -exec rm -f {} +",
+    "build": "parcel build index.pug",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "license": "MIT",
   "dependencies": {
-    "lets-talk-about--template": "^1.1.2"
+    "lets-talk-about--template": "^1.2.4"
   }
 }

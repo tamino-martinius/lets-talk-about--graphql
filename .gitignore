@@ -1,8 +1,5 @@
 node_modules/*
-!node_modules/lets-talk-about--template
-node_modules/lets-talk-about--template/*
-!node_modules/lets-talk-about--template/assets
 .DS_Store
 npm-debug.log*
-demo/*.js
 .vscode/
+.cache/
