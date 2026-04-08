@@ -1,17 +1,19 @@
 {
-  "name": "lets-talk-about---graphql",
-  "description": "Lets talk about ... GraphQL",
-  "author": "Tamino Martinius",
-  "homepage": "https://github.com/tamino-martinius/lets-talk-about--graphql",
+  "name": "lets-talk-about--graphql",
+  "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start": "parcel index.pug",
-    "prebuild": "find dist ! -name 'CNAME' -type f -exec rm -f {} + || true",
-    "build": "parcel build index.pug",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
-  },
+  "type": "module",
+  "description": "Example presentation built with lets-talk-about.",
+  "author": "Tamino Martinius",
+  "homepage": "https://github.com/tamino-martinius/lets-talk-about--example",
   "license": "MIT",
+  "scripts": {
+    "dev": "lets-talk-about dev",
+    "build": "lets-talk-about build",
+    "predeploy": "npm run build",
+    "deploy": "lets-talk-about deploy"
+  },
   "dependencies": {
-    "lets-talk-about--template": "^1.2.4"
+    "lets-talk-about": "^0.5.0"
   }
 }
