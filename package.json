@@ -14,6 +14,6 @@
     "deploy": "lets-talk-about deploy"
   },
   "dependencies": {
-    "lets-talk-about": "^0.5.0"
+    "lets-talk-about": "^0.5.2"
   }
 }
